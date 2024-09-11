@@ -1,11 +1,11 @@
+const dotenv=require("dotenv")
 const mongoose = require("mongoose");
-const uri =
-  "mongodb+srv://mern-book-store:Ananmongodb23@ims-cluster.kujdh.mongodb.net/?retryWrites=true&w=majority&appName=IMS-Cluster";
-;
+
+dotenv.config()
 
 function main() {
   mongoose
-    .connect(uri)
+    .connect(process.env.MONGO_URI)
     .then(() => {
       console.log("Succesfull");
     })
