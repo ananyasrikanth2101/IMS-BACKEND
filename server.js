@@ -6,7 +6,7 @@ const purchaseRoute = require("./router/purchase");
 const salesRoute = require("./router/sales");
 const cors = require("cors");
 const User = require("./models/users");
-const Product = require("./models/Product");
+const Product = require("./models/product");
 
 const app = express();
 const PORT = 4000;
@@ -77,10 +77,10 @@ app.post("/api/register", (req, res) => {
   console.log("request: ", req.body);
 });
 
-app.get("/testget", async (req, res) => {
-  const result = await Product.findOne({ _id: " " });
-  res.json(result);
-});
+//app.get("/testget", async (req, res) => {
+//  const result = await Product.findOne({ _id: " " });
+ // res.json(result);
+//});
 
 // Here we are listening to the server
 app.listen(PORT, () => {
